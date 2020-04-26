@@ -1,0 +1,219 @@
+body {
+    background: hsl(240, 78%, 98%);
+    color: hsl(233, 13%, 49%);
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0;
+    min-height: 100vh;
+
+    .bottom-background,
+    .top-background {
+        z-index: -1;
+    }
+
+    .bottom-background {
+        bottom: 0;
+        position: absolute;
+        display: none;
+        
+        @media screen and (min-width: 750px) {  
+            display: block;
+        }
+    }
+
+    .top-background {
+        position: absolute;
+        right: 0;
+    }
+
+    h2 {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 3rem 0 2rem;
+    }
+
+    .toggle-container {
+        color: hsl(234, 14%, 74%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .pricing-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .table {
+        display: table;
+        margin: 3rem 10%;
+        width: 100%;
+
+        .table-cell {
+            display: table-cell;
+            vertical-align: middle;
+            // max-width: 0;
+        }
+
+        .price-card {
+            background: #fff;
+            padding: 1.5rem 2rem 1rem;
+            box-shadow: 1px 2px 12px hsl(240, 77%, 93%);
+            border-radius: inherit;
+            text-align: center;
+
+            .title {
+                margin: 0;
+            }
+
+            hr {
+                background-color: hsl(240, 11%, 89%);
+                border-top: 1px solid hsl(240, 11%, 89%);
+                border-bottom: none;
+                border-right: none;
+                margin: 0.8rem 0;
+                width: 100%;
+            }
+        }
+
+        .table-cell:first-child {
+            border-radius: 10px 0 0 10px;
+        }
+
+        .table-cell:last-child {
+            border-radius: 0 10px 10px 0;
+        }
+
+        .table-cell:nth-child(2) .price-card {
+            background: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+            border-radius: 10px;
+            color: #fff;
+
+            hr {
+                background-color: hsl(234, 14%, 74%);
+                border-top: 1px solid hsl(234, 14%, 74%);
+            }
+
+            .title {
+                margin: 1.2rem 0 0;
+            }
+
+            .more-btn {
+                background: #fff;
+                border: 1px solid #fff;
+                color: hsl(237, 63%, 64%);
+
+                &:hover {
+                    background: transparent;
+                    color: #fff;
+                }
+            }
+        }
+
+        .price {
+            font-size: 2.6em;
+            margin-block-end: 0.3em;
+            margin-block-start: 0.4em;
+
+            @media screen and (min-width: 750px) and (max-width: 820px) {
+                font-size: 2.3em;
+            }
+        }
+
+        .more-btn {
+            padding: 0.8rem;
+            border: 0;
+            width: 93%;
+            border-radius: 4px;
+            color: #fff;
+            background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+            border: 1px solid hsl(237, 63%, 64%);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 11px;
+            margin: 0.6rem 0;
+            white-space: nowrap;
+            overflow: hidden;
+            cursor: pointer;
+
+            &:hover {
+                border: 1px solid hsl(237, 63%, 64%);
+                color: hsl(237, 63%, 64%);
+                background: #fff;
+            }
+        }
+
+        @media screen and (max-width: 750px) {
+            .table-cell {
+                display: unset;
+            }
+
+            .price-card {
+                margin: 2rem 0;
+                height: auto !important;
+
+                .title {
+                    margin: 0 !important;
+                }
+
+                &:first-child {
+                    margin: 0 0 2rem;
+                }
+            }
+        }
+    }
+}
+
+h2, .toggle-container, .table-cell, .price-card, .title, .price, .attribution {
+    cursor: default;
+}
+
+/* toggle in label designing */
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 2.5rem;
+    height: 1.3rem;
+    background: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    border-radius: 30px;
+    border: 2px solid linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    margin: 0 1rem;
+
+    &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+    }
+}
+
+/* After slide changes */
+.toggle:after {
+    content: "";
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #fff;
+    left: 3px;
+    top: 2px;
+    transition: all 0.5s;
+}
+
+/* Checkbox cheked effect */
+.checkbox:checked + .toggle::after {
+    left: 22px;
+}
+
+/* Checkbox cheked toggle label bg color */
+.checkbox:checked + .toggle {
+    background-color: green;
+}
+
+/* Checkbox vanished */
+.checkbox {
+    display: none;
+}

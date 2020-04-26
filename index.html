@@ -1,52 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | [Challenge Name Here]</title>
+
+  <title>Frontend Mentor | File Transfer pricing component</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
   </style>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <img class="bottom-background" src="images/bg-bottom.svg">
+  <img class="top-background" src="images/bg-top.svg">
 
-  Our Pricing
-  Annually
-  Monthly
+  <h2>Our Pricing</h2>
 
-  Basic
-  &dollar;19.99
-  &dollar;199.99
-  500 GB Storage
-  2 Users Allowed
-  Send up to 3 GB
-  Learn More
-
-  Professional
-  &dollar;24.99
-  &dollar;249.99
-  1 TB Storage
-  5 Users Allowed
-  Send up to 10 GB
-  Learn More
-
-  Master
-  &dollar;39.99
-  &dollar;399.99
-  2 TB Storage
-  10 Users Allowed
-  Send up to 20 GB
-  Learn More
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <div class="toggle-container">
+    Annually
+    <input type="checkbox" id="switch" class="checkbox" />
+    <label for="switch" class="toggle"></label>
+    Monthly
   </div>
+
+  <div class="pricing-container">
+    <div class="table">
+      <div class="table-cell">
+        <div class="price-card">
+          <p class="title">Basic</p>
+          <p class="price">&dollar;199.99</p>
+          <hr>
+          500 GB Storage<br>
+          <hr>
+          2 Users Allowed<br>
+          <hr>
+          Send up to 3 GB<br>
+          <hr>
+          <button class="more-btn">Learn More</button>
+        </div>
+      </div>
+      <div class="table-cell middle">
+        <div class="price-card">
+          <p class="title">Professional</p>
+          <p class="price">&dollar;249.99</p>
+          <hr>
+          1 TB Storage<br>
+          <hr>
+          5 Users Allowed<br>
+          <hr>
+          Send up to 10 GB<br>
+          <hr>
+          <button class="more-btn">Learn More</button>
+        </div>
+      </div>
+      <div class="table-cell">
+        <div class="price-card">
+          <p class="title">Master</p>
+          <p class="price">&dollar;399.99</p>
+          <hr>
+          2 TB Storage<br>
+          <hr>
+          10 Users Allowed<br>
+          <hr>
+          Send up to 20 GB<br>
+          <hr>
+          <button class="more-btn">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Geraldine Atayan</a>.
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
